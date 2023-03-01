@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>You Can't Close the Browser</title>
+	<style>
+		body {
+			background-color: #F0F0F0;
+			font-family: Arial, sans-serif;
+			text-align: center;
+		}
+		h1 {
+			font-size: 48px;
+			margin-top: 50px;
+		}
+		button {
+			font-size: 24px;
+			padding: 10px;
+			margin-top: 50px;
+			background-color: #008CBA;
+			color: #FFF;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		#score {
+			font-size: 36px;
+			margin-top: 50px;
+		}
+		.auto-clicker {
+			display: inline-block;
+			margin: 20px;
+			padding: 10px;
+			background-color: #008CBA;
+			color: #FFF;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		#auto-clickers {
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<h1>You Can't Close the Browser</h1>
+	<button id="clicker">Click Me!</button>
+	<p id="score">Score: 0</p>
+	<div id="auto-clickers">
+		<h2>Auto-Clickers:</h2>
+		<button class="auto-clicker" id="auto-clicker-1">Auto-Clicker 1: Cost - 10</button>
+		<button class="auto-clicker" id="auto-clicker-2">Auto-Clicker 2: Cost - 50</button>
+		<button class="auto-clicker" id="auto-clicker-3">Auto-Clicker 3: Cost - 100</button>
+	</div>
+
+	<script>
+		let score = 0;
+		let clicker = document.getElementById("clicker");
+		let scoreDisplay = document.getElementById("score");
+		let autoClicker1 = document.getElementById("auto-clicker-1");
+		let autoClicker2 = document.getElementById("auto-clicker-2");
+		let autoClicker3 = document.getElementById("auto-clicker-3");
+		let autoClickers = [autoClicker1, autoClicker2, autoClicker3];
+
+		clicker.addEventListener("click", function() {
+			score += 1;
+			scoreDisplay.innerHTML = "Score: " + score;
+		});
+
+		autoClicker1.addEventListener("click", function() {
+			if (score >= 10) {
+				score -= 10;
+				scoreDisplay.innerHTML = "Score: " + score;
+				setInterval(function() {
+					score += 1;
+					scoreDisplay.innerHTML = "Score: " + score;
+				}, 1000);
+			}
+		});
+
+		autoClicker2.addEventListener("click", function() {
+			if (score >= 50) {
+				score -= 50;
+				scoreDisplay.innerHTML = "Score: " + score;
+				setInterval(function() {
+					score += 5;
+					scoreDisplay.innerHTML = "Score: " + score;
+				}, 500);
+			}
+		});
+
+		autoClicker3.addEventListener("click", function() {
+			if (score >= 100) {
+        score -= 100;
+			scoreDisplay.innerHTML = "Score: " + score;
+			setInterval(function() {
+				score += 10;
+				scoreDisplay.innerHTML = "Score: " + score;
+			}, 250);
+		}
+	});
+
+	function checkAutoClickers() {
+		for (let i = 0; i < autoClickers.length; i++) {
+			let autoClicker = autoClickers[i];
+			let cost = parseInt(autoClicker.innerHTML.split("Cost - ")[1]);
+			if (score >= cost) {
+				autoClicker.disabled = false;
+			} else {
+				autoClicker.disabled = true;
+			}
+		}
+	}
+
+	setInterval(function() {
+		checkAutoClickers();
+	}, 1000);
+</script>
+</body>
+</html>
