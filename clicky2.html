@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>You Leave, You Lose</title>
+	<!-- Add Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<style>
+		body {
+			background-color: #F0F0F0;
+			font-family: Arial, sans-serif;
+			text-align: center;
+			padding-top: 50px;
+		}
+		h1 {
+			font-size: 48px;
+			margin-top: 50px;
+			margin-bottom: 30px;
+		}
+		button {
+			font-size: 24px;
+			padding: 10px 30px;
+			margin-top: 50px;
+			background-color: #008CBA;
+			color: #FFF;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		#score {
+			font-size: 36px;
+			margin-top: 50px;
+			margin-bottom: 30px;
+		}
+		.auto-clicker {
+			margin: 20px;
+			padding: 10px 30px;
+			background-color: #008CBA;
+			color: #FFF;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		#auto-clickers {
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>You Leave, You Lose</h1>
+		<button id="clicker" class="btn btn-primary btn-lg">Click</button>
+		<p id="score">Score: 0</p>
+		<div id="auto-clickers">
+			<h2>Purchase:</h2>
+			<button class="auto-clicker btn btn-primary" id="auto-clicker-1">Auto-Click 1: Cost - 10</button>
+			<button class="auto-clicker btn btn-primary" id="auto-clicker-2">Auto-Click 2: Cost - 50</button>
+			<button class="auto-clicker btn btn-primary" id="auto-clicker-3">Auto-Click 3: Cost - 100</button>
+		</div>
+	</div>
+    <p id="ac1">auto click 1: 0</p>
+
+	<!-- Add Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+	<script>
+		let score = 0;
+        let ac1 = 0;
+        let ac1Display = document.getElementById("ac1");
+		let clicker = document.getElementById("clicker");
+		let scoreDisplay = document.getElementById("score");
+		let autoClicker1 = document.getElementById("auto-clicker-1");
+		let autoClicker2 = document.getElementById("auto-clicker-2");
+		let autoClicker3 = document.getElementById("auto-clicker-3");
+		let autoClickers = [autoClicker1, autoClicker2, autoClicker3];
+
+		clicker.addEventListener("click", function() {
+			score += 1;
+			scoreDisplay.innerHTML = "Score: " + score;
+		});
+
+		autoClicker1.addEventListener("click", function() {
+			if (score >= 10) {
+				ac1 += 1;
+                score -= 10;
+				scoreDisplay.innerHTML = "Score: " + score;
+				setInterval(function() {
+					score += 1;
+					scoreDisplay.innerHTML = "Score: " + score;
+				}, 1000);
+			
+            }
+	});
+
+	autoClicker2.addEventListener("click", function() {
+		if (score >= 50) {
+			score -= 50;
+			scoreDisplay.innerHTML = "Score: " + score;
+			setInterval(function() {
+				score += 5;
+				scoreDisplay.innerHTML = "Score: " + score;
+			}, 500);
+		}
+	});
+
+	autoClicker3.addEventListener("click", function() {
+		if (score >= 100) {
+			score -= 100;
+			scoreDisplay.innerHTML = "Score: " + score;
+			setInterval(function() {
+				score += 10;
+				scoreDisplay.innerHTML = "Score: " + score;
+			}, 250);
+		}
+	});
+
+	function checkAutoClickers() {
+		for (let i = 0; i < autoClickers.length; i++) {
+			let autoClicker = autoClickers[i];
+			let cost = parseInt(autoClicker.innerHTML.split("Cost - ")[1]);
+			if (score >= cost) {
+				autoClicker.disabled = false;
+			} else {
+				autoClicker.disabled = true;
+			}
+		}
+	}
+
+	setInterval(function() {
+		checkAutoClickers();
+	}, 1000);
+</script>
+</body>
+</html>
