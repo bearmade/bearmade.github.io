@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Conway's Game of Life with 3 types of cells</title>
+	<title>Game of not Life 2</title>
 	<style type="text/css">
 		canvas {
 			border: 1px solid black;
@@ -9,7 +9,7 @@
 	</style>
 </head>
 <body>
-	<h1>Conway's Game of Life with 3 types of cells</h1>
+	
 	<canvas id="canvas" width="500" height="500"></canvas>
 	<script type="text/javascript">
 		// initialize the canvas and game variables
@@ -43,9 +43,9 @@
       if (cells[i][j].type == 'red') {
         ctx.fillStyle = 'red';
       } else if (cells[i][j].type == 'green') {
-        ctx.fillStyle = 'green';
+        ctx.fillStyle = 'maroon';
       } else if (cells[i][j].type == 'blue') {
-        ctx.fillStyle = 'blue';
+        ctx.fillStyle = 'pink';
       } else {
         // dead cells are black
         ctx.fillStyle = 'black';
