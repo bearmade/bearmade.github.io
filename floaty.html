@@ -97,9 +97,9 @@
           var distance = Math.sqrt(dx*dx + dy*dy);
           
           // change the particle's speed based on the distance to the mouse
-          if (distance < 70) {
-            this.speed.x += dx * 0.002;
-            this.speed.y += dy * 0.002;
+          if (distance < 200) {
+            this.speed.x += dx * 0.003;
+            this.speed.y += dy * 0.003;
           }
           
           // limit the particle's speed
