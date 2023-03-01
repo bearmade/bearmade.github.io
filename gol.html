@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Conway's Game of Life with 3 types of cells</title>
+	<style type="text/css">
+		canvas {
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<h1>Conway's Game of Life with 3 types of cells</h1>
+	<canvas id="canvas" width="500" height="500"></canvas>
+	<script type="text/javascript">
+		// initialize the canvas and game variables
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		var cellSize = 10;
+		var cellsX = canvas.width / cellSize;
+		var cellsY = canvas.height / cellSize;
+		var cells = [];
+		var types = ['red', 'green', 'blue'];
+		
+		// initialize the cells randomly with 3 types
+		for (var i = 0; i < cellsX; i++) {
+			cells[i] = [];
+			for (var j = 0; j < cellsY; j++) {
+				cells[i][j] = {
+					type: types[Math.floor(Math.random() * types.length)],
+					nextType: '',
+				};
+			}
+		}
+		
+		function drawCells() {
+  // fill the canvas with black
+  ctx.fillStyle = 'black';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // draw living cells
+  for (var i = 0; i < cellsX; i++) {
+    for (var j = 0; j < cellsY; j++) {
+      if (cells[i][j].type == 'red') {
+        ctx.fillStyle = 'red';
+      } else if (cells[i][j].type == 'green') {
+        ctx.fillStyle = 'green';
+      } else if (cells[i][j].type == 'blue') {
+        ctx.fillStyle = 'blue';
+      } else {
+        // dead cells are black
+        ctx.fillStyle = 'black';
+      }
+      ctx.fillRect(i * cellSize, j * cellSize, cellSize, cellSize);
+    }
+  }
+}
+
+		
+		// update the cells according to the game rules
+		function updateCells() {
+			for (var i = 0; i < cellsX; i++) {
+				for (var j = 0; j < cellsY; j++) {
+					// count the neighbors of each type
+					var neighbors = { red: 0, green: 0, blue: 0 };
+					for (var x = -1; x <= 1; x++) {
+						for (var y = -1; y <= 1; y++) {
+							if (x == 0 && y == 0) continue;
+							var neighborX = i + x;
+							var neighborY = j + y;
+							if (neighborX < 0 || neighborX >= cellsX || neighborY < 0 || neighborY >= cellsY) continue;
+							neighbors[cells[neighborX][neighborY].type]++;
+						}
+					}
+					// apply the game rules to the cell
+					if (cells[i][j].type == 'red') {
+						if (neighbors.green >= 2 && neighbors.blue >= 2) {
+							cells[i][j].nextType = 'green';
+						} else if (neighbors.green >= 3) {
+							cells[i][j].nextType = 'green';
+						} else if (neighbors.blue >= 3) {
+							cells[i][j].nextType = 'blue';
+						} else {
+							cells[i][j].nextType = '';
+						}
+					} else if (cells[i][j].type == 'green') {
+						if (neighbors.red >= 2 && neighbors.blue >= 2) {
+							cells[i][j].nextType = 'blue';
+} else if (neighbors.red >= 3) {
+cells[i][j].nextType = 'red';
+} else if (neighbors.blue >= 3) {
+cells[i][j].nextType = 'blue';
+} else {
+cells[i][j].nextType = '';
+}
+} else if (cells[i][j].type == 'blue') {
+if (neighbors.red >= 2 && neighbors.green >= 2) {
+cells[i][j].nextType = 'red';
+} else if (neighbors.red >= 3) {
+cells[i][j].nextType = 'red';
+} else if (neighbors.green >= 3) {
+cells[i][j].nextType = 'green';
+} else {
+cells[i][j].nextType = '';
+}
+}
+}
+}
+// apply the next types to the cells
+for (var i = 0; i < cellsX; i++) {
+for (var j = 0; j < cellsY; j++) {
+cells[i][j].type = cells[i][j].nextType;
+}
+}
+}
+
+	// main game loop
+	function gameLoop() {
+		updateCells();
+		drawCells();
+		setTimeout(gameLoop, 100);
+	}
+	
+	// start the game loop
+	gameLoop();
+</script>
+
+
+ 
+</body>
+</html>
