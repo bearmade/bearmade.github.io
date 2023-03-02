@@ -1,0 +1,17 @@
+{
+"companyName": "DefaultCompany",
+"productName": "Frog-O-Calypse",
+"productVersion": "6.6",
+"dataUrl": "frog.data.unityweb",
+"asmCodeUrl": "frog.asm.code.unityweb",
+"asmMemoryUrl": "frog.asm.memory.unityweb",
+"asmFrameworkUrl": "frog.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#BFBFBF",
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.12f1"
+}
