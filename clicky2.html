@@ -57,8 +57,9 @@
 			<button class="auto-clicker btn btn-primary" id="auto-clicker-2">Auto-Click 2: Cost - 50</button>
 			<button class="auto-clicker btn btn-primary" id="auto-clicker-3">Auto-Click 3: Cost - 100</button>
 		</div>
+		<p id="ac1">auto click 1: 0</p>
 	</div>
-    <p id="ac1">auto click 1: 0</p>
+    
 
 	<!-- Add Bootstrap JS -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -82,8 +83,9 @@
 		autoClicker1.addEventListener("click", function() {
 			if (score >= 10) {
 				ac1 += 1;
-                score -= 10;
+                		score -= 10;
 				scoreDisplay.innerHTML = "Score: " + score;
+				ac1Display.innerHTML = "auto click 1: " + ac1;
 				setInterval(function() {
 					score += 1;
 					scoreDisplay.innerHTML = "Score: " + score;
