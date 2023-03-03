@@ -11,7 +11,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- Bootstrap JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
- 
+ <script src="jsnes.min.js"></script>
+
 	
 	
 	
@@ -67,9 +68,21 @@
   
   <!-- Page content -->
   <div class="container-fluid" style="margin-top: 80px;">
-  
+  <canvas id="nes-screen"></canvas>
+
    <canvas id="canvas1"></canvas>
-    <p></p>
+    
+	var nes = new jsnes.NES({
+  onFrame: function(frameBuffer) {
+    var canvas = document.getElementById('nes-screen');
+    var ctx = canvas.getContext('2d');
+    var imageData = ctx.createImageData(256, 240);
+    imageData.data.set(frameBuffer);
+    ctx.putImageData(imageData, 0, 0);
+  }
+});
+nes.loadROM('GypsumAndTheTravelersDEMO.nes');
+
 	  
 	 
 	  
