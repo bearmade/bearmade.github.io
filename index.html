@@ -67,7 +67,28 @@
   <div class="container-fluid" style="margin-top: 80px;">
  
 
-   <canvas id="canvas1"></canvas>
+   <canvas id="canvas1">
+
+
+<script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+  <script>
+    var converter = new showdown.Converter();
+    var markdown = `
+
+# Welcome 
+
+________
+
+## I am a work in progress
+    
+
+`;
+
+    var html = converter.makeHtml(markdown);
+    document.getElementById('content').innerHTML = html;
+  </script>
+
+</canvas>
     
 	
 
