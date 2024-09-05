@@ -11,10 +11,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- Bootstrap JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
- 
 
-	
-	
 	
 	<style>
     /* Add padding to the navbar */
@@ -38,7 +35,7 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-    <a class="navbar-brand" href="#">&lt;games&gt;</a>
+     <a class="navbar-brand" href="#">&lt;hunter singleton&gt;</a> 
     <!-- Toggle button for mobile navigation -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -67,7 +64,45 @@
   <div class="container-fluid" style="margin-top: 80px;">
  
 
-   <canvas id="canvas1"></canvas>
+
+<div id="content"></div>
+  <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+
+  <script>
+    var converter = new showdown.Converter();
+    var markdown = `
+
+
+
+
+_______
+
+# Projects
+
+## [CroakusPocusSGDK](https://github.com/bearmade/CroakusPocusSGDK)
+
+![blastem_20240613_115257](https://github.com/user-attachments/assets/fe48b3e9-3a6f-419a-8251-61ead9d7df29)
+
+- Procedural tilemap generation on the Sega Genesis using SGDK written in C.
+
+## [SGDK-ASCII-roguelike](https://github.com/bearmade/SGDK-ASCII-roguelike)
+
+- Small SGDK project demonstrating procedural level generation.
+
+## [Gypsum & the Travelers](https://github.com/bearmade/Gypsum-NES-Demo)
+
+### [Play on TheRetroverse](https://theretroverse.com/product/gypsum-the-travelers/)
+
+- Action Adventure NES demo made using NesMaker.
+    
+__________
+`;
+
+    var html = converter.makeHtml(markdown);
+    document.getElementById('content').innerHTML = html;
+  </script>
+<canvas id="canvas1">
+</canvas>
     
 	
 
