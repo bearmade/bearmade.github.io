@@ -16,13 +16,13 @@ body {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 100px 0;
+    padding: 75px 0;
     background-color: #fff;
 }
 
 .hero h1 {
     font-size: 1.5rem;
-    margin-bottom: 7px;
+    margin-bottom: 10px;
 }
 
 .hero p {
