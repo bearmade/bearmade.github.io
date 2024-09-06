@@ -1,115 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hunter Singleton</title>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- Popper JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <!-- Bootstrap JS -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-	
-	<style>
-    /* Add padding to the navbar */
-    .navbar {
-      padding: 0.5rem 1rem;
-    }
-	
-	canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-      }
-	  body {
-        background-color: grey;
-        margin: 0;
-        padding: 0;
-      }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hunter Singleton | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-     <a class="navbar-brand" href="#">&lt;hunter singleton&gt;</a> 
-    <!-- Toggle button for mobile navigation -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- Navigation links -->
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="games.html">Games</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="music.html">Music</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
-        </li>
-		
-      </ul>
+    <header class="hero">
+        <h1>< Hunter Singleton ></h1>
+
+        <p>Programmer, Artist, Musician<br>Crafting creativity through code and design</p>
+
+
+
+
+<br>
+<img src="hunty1.png" class="circle-image">
+    </header>
+
+    <section class="about">
+        <h2>< About Me ></h2>
+    	<p> - Programmer, artist, and musician with a passion for creative expression across disciplines.</p>
+	<p> - Enthusiast of cellular automata and complex systems.</p>
+	<p> - Proficient in C++, Python, and Bash, with the ability to quickly learn new programming languages.</p>
+	<p> - Strong advocate for Linux, embracing the flexibility and control it offers.</p>
+	<p> - Minimalist in all forms, from code to design and lifestyle.</p>
+	<p> - Versatile problem solver with a strong interest in both technical and artistic pursuits.</p>
+    </section>
+
+    <section class="skills">
+        <h2>< Skillset></h2>
+        <div class="skill-grid">
+            <div>Programming: <br><br><br>Proficient in C++, Python, and Bash, Capable of quickly adapting to new languages and tools as needed. Focused on writing clean, efficient, and maintainable code, with a minimalist approach to development that reduces complexity while maximizing performance. Always aiming for scalable and flexible solutions.</div>
+            <div>Engines, Framworks and Tools:<br> <br> Skilled in working with a variety of game development engines and frameworks, including Unreal Engine, Unity, GameBoy Studio, NesMaker, as well as RPGMaker and SGDK, Sega Genesis Development Kit. Experienced with an array of art and sound production applications</div>
+	    <div>Problem Solving & Creative Thinking: <br><br>Able to approach complex technical and creative challenges with a unique perspective, combining logical problem-solving skills with artistic creativity. Experienced in finding elegant solutions, whether in programming or artistic design, while maintaining efficiency and simplicity.</div>	
+
+        </div>
+
+    </section>
+
+    <section class="projects">
+        <h2>< Projects ></h2>
+        <div class="project-grid">
+<a href="http://github.com/bearmade/CroakusPocusSGDK">
+    <div class="project">
+        <img src="https://github.com/user-attachments/assets/fe48b3e9-3a6f-419a-8251-61ead9d7df29" alt="Project Image">
+        <h3>Croakus Pocus</h3>
     </div>
-  </nav>
-  
-  <!-- Page content -->
-  <div class="container-fluid" style="margin-top: 80px;">
- 
+</a>
+
+<a href="https://github.com/bearmade/SGDK-ASCII-roguelike">
+    <div class="project">
+        <img src="https://github.com/user-attachments/assets/aeb8fb24-c65a-439b-bd64-e62072d55628"  alt="Project Image">
+        <h3>SGDK Rogue-like</h3>
+    </div>
+</a>
+
+<a href="https://github.com/bearmade/Gypsum-NES-Demo">
+    <div class="project">
+        <img src="https://github.com/user-attachments/assets/351e656d-8542-4859-9fa7-57c6836dc69a" alt="Project Image">
+        <h3>Gypsum & the Travelers NES</h3>
+    </div>
+</a>
+
+            <!-- Add more projects as needed -->
+
+        </div>
+    </section>
 
 
-<div id="content"></div>
-  <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
-
-  <script>
-    var converter = new showdown.Converter();
-    var markdown = `
-
-### Bear with me, for I am a work in progress.
-________
-
-# Summary
-
-- Programmer, artist, and musician with a passion for creative expression across disciplines.
-- Enthusiast of cellular automata and complex systems.
-- Proficient in C++, Python, and Bash, with the ability to quickly learn new programming languages.
-- Strong advocate for Linux, embracing the flexibility and control it offers.
-- Minimalist in all forms, from code to design and lifestyle.
-- Versatile problem solver with a strong interest in both technical and artistic pursuits.
- 
-_______
-
-###### here is a picture
+<section class="gallery">
+    <h2>Image Gallery</h2>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="http://bearmade.github.io/images/Exterior_FinalRender.png" alt="Gallery Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="http://bearmade.github.io/images/FinalRenderRevision.png" alt="Gallery Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="http://bearmade.github.io/images/Interior_FinalRender.png" alt="Gallery Image 3">
+        </div>
+ 	<div class="gallery-item">
+            <img src="http://bearmade.github.io/images/Ratapult_Final_Render.png" alt="Gallery Image 3">
+        </div>
+        <!-- Add more gallery items as needed -->
+    </div>
+</section>
 
 
 
-
-`;
-
-    var html = converter.makeHtml(markdown);
-    document.getElementById('content').innerHTML = html;
-  </script>
-
-<img src="http://bearmade.github.io/images/ExteriorFinalRender2.png" alt="description of image" width="750" height="600">
-
-
-<canvas id="canvas1">
-</canvas>
-    
-	
-
-	  
-	 
-	  
-  </div>
-  <script src="particles.js"></script>
-
+    <section class="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <a href="mailto:bear.made.games@gmail.com">Email</a>
+            <a href="https://github.com/bearmade">GitHub</a>
+            <a href="https://linkedin.com/in/hunter-singleton">LinkedIn</a>
+        </div>
+    </section>
 </body>
 </html>
