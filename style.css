@@ -21,7 +21,7 @@ body {
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
@@ -39,7 +39,7 @@ body {
 }
 
 .about h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin-bottom: 20px;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 .skills h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin-bottom: 20px;
 }
 
@@ -70,7 +70,7 @@ body {
 }
 
 .projects h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin-bottom: 40px;
 }
 
@@ -118,7 +118,7 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 2048px) {
+@media (max-width: 1024px) {
     .skill-grid {
         grid-template-columns: 1fr;
     }
@@ -142,7 +142,7 @@ body {
 }
 
 .gallery h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin-bottom: 20px;
 }
 
