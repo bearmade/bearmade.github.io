@@ -1,0 +1,53 @@
+/**
+ * Roguelike HTML5 - Enums
+ */
+
+const TileType = {
+    WALL: 'WALL',
+    FLOOR: 'FLOOR',
+    DOOR_CLOSED: 'DOOR_CLOSED',
+    DOOR_OPEN: 'DOOR_OPEN',
+    STAIRS_DOWN: 'STAIRS_DOWN',
+    STAIRS_UP: 'STAIRS_UP',
+    WATER: 'WATER',
+    LAVA: 'LAVA',
+    GRASS: 'GRASS',
+    TREE: 'TREE',
+    BUSH: 'BUSH',
+    BLOOD: 'BLOOD',
+    BONES: 'BONES',
+    ALTAR: 'ALTAR',
+    CHEST: 'CHEST',
+    TRAP_SPIKE: 'TRAP_SPIKE',
+    TRAP_FIRE: 'TRAP_FIRE'
+};
+
+const ItemType = {
+    HEALTH_POTION: 'HEALTH_POTION',
+    MANA_POTION: 'MANA_POTION',
+    SWORD: 'SWORD',
+    AXE: 'AXE',
+    MACE: 'MACE',
+    ARMOR: 'ARMOR',
+    SHIELD: 'SHIELD',
+    RING: 'RING',
+    AMULET: 'AMULET',
+    SCROLL_FIREBALL: 'SCROLL_FIREBALL',
+    SCROLL_LIGHTNING: 'SCROLL_LIGHTNING',
+    SCROLL_TELEPORT: 'SCROLL_TELEPORT',
+    SCROLL_IDENTIFY: 'SCROLL_IDENTIFY',
+    GOLD: 'GOLD',
+    KEY: 'KEY',
+    FOOD: 'FOOD',
+    GEM: 'GEM',
+    WAND: 'WAND',
+    BOOK: 'BOOK'
+};
+
+const Biome = {
+    DUNGEON: 'DUNGEON',
+    CAVE: 'CAVE',
+    CRYPT: 'CRYPT',
+    FOREST: 'FOREST',
+    VOLCANO: 'VOLCANO'
+};
